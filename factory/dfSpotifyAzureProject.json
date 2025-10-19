@@ -1,0 +1,9 @@
+{
+	"name": "dfSpotifyAzureProject",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "0d3f0ccc-14ba-4411-b4d7-b197412d1b0c",
+		"tenantId": "a83fa001-20fd-40a1-b5e7-9bb395f94446"
+	}
+}
