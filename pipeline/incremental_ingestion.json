@@ -1,0 +1,37 @@
+{
+	"name": "incremental_ingestion",
+	"properties": {
+		"description": "This pipeline has been created to facilitate the ingestion of data from azure sql db into azure data lake.",
+		"activities": [
+			{
+				"name": "AzureSQLtoDatalake",
+				"description": "Used to copy data from azure sql db to azure data lake",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "Azure_Sql",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
